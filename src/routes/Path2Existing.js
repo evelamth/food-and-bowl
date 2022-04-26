@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import "./Path2Existing.css";
 
 function Path2Existing() {
   let navigate = useNavigate();
@@ -8,13 +9,14 @@ function Path2Existing() {
     navigate("/lane");
   }
   return (
-    <div>
-      <h1>Existing Customer</h1>
-      <form>
-        <label>Email:</label>
-        <input type="text"></input>
+    <div className="existing">
+      <form classNae="existing__form">
+        <label className="existing__label">Email:</label>
+        <input className="existing__input" type="text"></input>
       </form>
-      <button onClick={handleClick}>Next</button>
+      <button className="existing__button" onClick={handleClick}>
+        Next
+      </button>
     </div>
   );
 }

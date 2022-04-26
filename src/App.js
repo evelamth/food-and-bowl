@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./App.css";
 
 function App() {
   let navigate = useNavigate();
@@ -13,9 +14,13 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <button onClick={handleClickExisting}>Existing Customer</button>
-      <button onClick={handleClickNew}>New Customer</button>
+    <div className="app">
+      <button className="app__button" onClick={handleClickExisting}>
+        Existing Customer
+      </button>
+      <button className="app__button" onClick={handleClickNew}>
+        New Customer
+      </button>
     </div>
   );
 }
