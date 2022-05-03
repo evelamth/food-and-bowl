@@ -1,4 +1,4 @@
-.existing {
+.new {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,25 +7,26 @@
   background-color: #efefef;
 }
 
-.existing__header {
+.new__header {
   font-size: 30px;
   font-family: "Montserrat", sans-serif;
   color: #00bf80;
 }
 
-.existing__form {
+.new__form {
   display: flex;
   flex-direction: column;
 }
 
-.existing__label {
+.new__form label {
+  margin-top: 2px;
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
   color: #a9a9a9;
   width: 150px;
 }
 
-.existing__input {
+.new__form input {
   padding: 5px;
   font-size: 25px;
   font-family: "Montserrat", sans-serif;
@@ -35,8 +36,8 @@
   border-radius: 4px;
 }
 
-.existing__button {
-  margin-top: 10px;
+.new__button {
+  margin-top: 25px;
   padding: 5px;
   font-size: 25px;
   font-family: "Montserrat", sans-serif;
@@ -47,6 +48,6 @@
   transition: 300ms;
 }
 
-.existing__button:hover {
+.new__button:hover {
   opacity: 0.6;
 }

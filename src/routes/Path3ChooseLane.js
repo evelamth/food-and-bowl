@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import "./Path3ChooseLane.css";
 
 function Path3ChooseLane() {
   let navigate = useNavigate();
@@ -9,22 +10,24 @@ function Path3ChooseLane() {
   }
   return (
     <div className="lane">
-      <h1>Choose Lane</h1>
+      <h1 className="lane__header">Choose Your Lane.</h1>
       <div className="lane__btnGroup">
         <button id={0} className="lane__specificLane">
-          Free
+          Lane: {1} Free
         </button>
         <button id={1} className="lane__specificLane">
-          Free
+          Lane: {2} Free
         </button>
         <button id={2} className="lane__specificLane">
-          Free
+          Lane: {3} Free
         </button>
         <button id={3} className="lane__specificLane">
-          Free
+          Lane: {4} Free
         </button>
       </div>
-      <button onClick={handleClick}>Next</button>
+      <button className="lane__button" onClick={handleClick}>
+        Next
+      </button>
     </div>
   );
 }
