@@ -7,10 +7,16 @@
   background-color: #efefef;
 }
 
-.new__header {
+.new__header--good {
   font-size: 30px;
   font-family: "Montserrat", sans-serif;
   color: #00bf80;
+}
+
+.new__header--bad {
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  color: #cc0000;
 }
 
 .new__form {
@@ -18,7 +24,7 @@
   flex-direction: column;
 }
 
-.new__form label {
+.new__form-label {
   margin-top: 2px;
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
@@ -26,13 +32,49 @@
   width: 150px;
 }
 
-.new__form input {
+.new__form-input {
   padding: 5px;
   font-size: 25px;
   font-family: "Montserrat", sans-serif;
   color: #efefef;
   background-color: #a9a9a9;
-  border: none;
+  border: 2px solid #a9a9a9;
+  border-radius: 4px;
+}
+
+.new__card-label--good {
+  margin-top: 2px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  color: #a9a9a9;
+  width: 150px;
+}
+
+.new__card-label--bad {
+  margin-top: 2px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  color: #cc0000;
+  width: 150px;
+}
+
+.new__card-input--good {
+  padding: 5px;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  color: #efefef;
+  background-color: #a9a9a9;
+  border: 2px solid #a9a9a9;
+  border-radius: 4px;
+}
+
+.new__card-input--bad {
+  padding: 5px;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  color: #efefef;
+  background-color: #a9a9a9;
+  border: 2px solid #cc0000;
   border-radius: 4px;
 }
 

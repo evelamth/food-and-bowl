@@ -17,7 +17,7 @@
   display: flex;
 }
 
-.lane__specificLane {
+.lane__unclicked {
   margin: 5px;
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
@@ -27,6 +27,20 @@
   border-radius: 4px;
   width: 125px;
   height: 325px;
+  transition: 500ms;
+}
+
+.lane__clicked {
+  margin: 5px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  color: #efefef;
+  background-color: #a9a9a9;
+  border: 4px solid #00bf80;
+  border-radius: 4px;
+  width: 125px;
+  height: 325px;
+  transition: 500ms;
 }
 
 .lane__button {

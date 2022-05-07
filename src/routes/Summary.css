@@ -1,0 +1,32 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #efefef;
+}
+
+.summary__header {
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  color: #00bf80;
+}
+
+.summary__button {
+  height: 8rem;
+  width: 25vw;
+  margin-bottom: 5rem;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  color: #efefef;
+  border: 0px solid;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px darkgrey;
+  background-color: #00bf80;
+  transition: 300ms;
+}
+
+.summary__buttont:hover {
+  opacity: 0.6;
+}

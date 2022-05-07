@@ -1,0 +1,43 @@
+.item {
+  display: flex;
+  flex-direction: row;
+}
+
+.item * {
+  margin-left: 10px;
+}
+
+.item__name {
+  margin-top: 2px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  color: #a9a9a9;
+  width: 150px;
+}
+
+.item__number {
+  margin-left: 0px;
+  height: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.item__price {
+  margin-top: 2px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  color: #a9a9a9;
+  width: 150px;
+}
+
+.item__quantity {
+  margin: 0px;
+  margin-left: 20px;
+  margin-top: 2px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  color: #a9a9a9;
+  width: 20px;
+}

@@ -3,9 +3,36 @@ import { useNavigate } from "react-router";
 import "./Path2New.css";
 //TODO: Verify THe denied, declined and accepted. Enter in the credit field and send this to backend, then get info back, figure out post in js
 function Path2New() {
-  const [data, setData] = useState([]);
-  const [card, setCard] = useState([]);
+  const [user, setUser] = useState({
+    fName: " ",
+    lName: " ",
+    phone: " ",
+    email: " ",
+  });
+  const [fName, setFName] = useState({
+    fName: " ",
+  });
+  const [lName, setLName] = useState({
+    lName: " ",
+  });
+  const [phone, setPhone] = useState({
+    phone: " ",
+  });
+  const [email, setEmail] = useState({
+    email: " ",
+  });
+  const [cardNumber, setCardNumber] = useState({
+    cardNumber: " ",
+  });
+  const [cardStatus, setCardStatus] = useState([]);
+  const [cardAccepted, setCardAccepted] = useState(true);
+
   let navigate = useNavigate();
+  console.log(fName);
+  console.log(lName);
+  console.log(phone);
+  console.log(email);
+  console.log(cardNumber);
 
   useEffect(() => {
     // fetch("http://localhost:8080/save", {
@@ -36,27 +63,29 @@ function Path2New() {
     e.preventDefault();
     postRequest();
     getRequest();
-    if (card.cardNumberType === "DENIED") {
+    if (cardStatus.cardNumberType === "DENIED") {
       console.log("no");
-    } else if (card.acceptedStatus === "DECLINED") {
+      setCardAccepted(false);
+    } else if (cardStatus.acceptedStatus === "DECLINED") {
       console.log("no1");
-    } else if (card.acceptedStatus === "ACCEPTED") {
+      setCardAccepted(false);
+    } else if (cardStatus.acceptedStatus === "ACCEPTED") {
       navigate("/lane");
     } else {
       console.log("something went wrong");
+      setCardAccepted(false);
     }
   }
 
   async function postRequest() {
+    console.log(cardNumber);
     await fetch("http://localhost:8080/save", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        cardNumber: "4234567890123123",
-      }),
+      body: JSON.stringify(cardNumber),
     });
   }
 
@@ -72,9 +101,9 @@ function Path2New() {
         console.log("new card added");
       })
       .then((data) => {
-        setCard(data[data.length - 1]);
+        setCardStatus(data[data.length - 1]);
         console.log("2");
-        console.log(card);
+        console.log(cardStatus);
       });
   }
 
@@ -97,18 +126,66 @@ function Path2New() {
 
   return (
     <div className="new">
-      <h1 className="new__header">Enter your information.</h1>
+      {/* <h1 className="new__header">Enter your information.</h1> */}
+      <div>
+        {cardAccepted ? (
+          <h1 className="new__header--good">Enter Your information</h1>
+        ) : (
+          <h1 className="new__header--bad">
+            Card has not been accepted, try again
+          </h1>
+        )}
+      </div>
       <form className="new__form">
-        <label>First Name:</label>
-        <input type="text"></input>
-        <label>Last Name:</label>
-        <input type="text"></input>
-        <label>Phone Number:</label>
-        <input type="tel"></input>
-        <label>Email:</label>
-        <input type="email"></input>
-        <label>Card Number:</label>
-        <input type="text"></input>
+        <label className="new__form-label">First Name:</label>
+        <input
+          className="new__form-input"
+          type="text"
+          onChange={(e) => {
+            setFName({ fName: e.target.value });
+          }}
+        ></input>
+        <label className="new__form-label">Last Name:</label>
+        <input
+          className="new__form-input"
+          type="text"
+          onChange={(e) => {
+            setLName({ lName: e.target.value });
+          }}
+        ></input>
+        <label className="new__form-label">Phone Number:</label>
+        <input
+          className="new__form-input"
+          type="tel"
+          onChange={(e) => {
+            setPhone({ phone: e.target.value });
+          }}
+        ></input>
+        <label className="new__form-label">Email:</label>
+        <input
+          className="new__form-input"
+          type="email"
+          onChange={(e) => {
+            setEmail({ email: e.target.value });
+          }}
+        ></input>
+
+        <label
+          className={
+            cardAccepted ? "new__card-label--good" : "new__card-label--bad"
+          }
+        >
+          Card Number:
+        </label>
+        <input
+          className={
+            cardAccepted ? "new__card-input--good" : "new__card-input--bad"
+          }
+          type="text"
+          onChange={(e) => {
+            setCardNumber({ cardNumber: e.target.value });
+          }}
+        ></input>
         <button className="new__button" onClick={handleClickLane}>
           Next
         </button>

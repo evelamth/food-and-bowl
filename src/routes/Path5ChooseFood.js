@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import DropdownFood from "../components/DropdownFood";
+import "./Path5ChooseFood.css";
 
 function Path5ChooseFood() {
   let navigate = useNavigate();
@@ -8,13 +8,29 @@ function Path5ChooseFood() {
   function handleClick() {
     navigate("/summary");
   }
+  function handleClickFood() {
+    navigate("/eat");
+  }
+  function handleClickBeverages() {
+    navigate("/beverages");
+  }
+  function handleClickDesserts() {
+    navigate("/desserts");
+  }
   return (
-    <div>
-      <h1>ChooseFood</h1>
-      <DropdownFood></DropdownFood>
-      <DropdownFood></DropdownFood>
-      <DropdownFood></DropdownFood>
-      <button onClick={handleClick}>Next</button>
+    <div className="food">
+      <button className="food__btn" onClick={handleClickFood}>
+        Food
+      </button>
+      <button className="food__btn" onClick={handleClickBeverages}>
+        Bevarages
+      </button>
+      <button className="food__btn" onClick={handleClickDesserts}>
+        Desserts
+      </button>
+      <button className="food__submit" onClick={handleClick}>
+        Place Order
+      </button>
     </div>
   );
 }

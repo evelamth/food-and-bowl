@@ -1,0 +1,11 @@
+.add__button {
+  margin: 0px 5px 0px 5px;
+  padding: 3px;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  color: #efefef;
+  background-color: #00bf80;
+  border: none;
+  border-radius: 3px;
+  transition: 300ms;
+}

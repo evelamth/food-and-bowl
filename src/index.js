@@ -10,6 +10,9 @@ import Path2Existing from "./routes/Path2Existing";
 import Path3ChooseLane from "./routes/Path3ChooseLane";
 import Path4ChooseShoes from "./routes/Path4ChooseShoes";
 import Path5ChooseFood from "./routes/Path5ChooseFood";
+import FoodChoice from "./routes/Path6Food";
+import BeverageChoice from "./routes/Path6Bevarages";
+import DessertsChoice from "./routes/Path7Desserts";
 import Summary from "./routes/Summary";
 
 import "./index.css";
@@ -25,6 +28,9 @@ root.render(
         <Route path="/lane" element={<Path3ChooseLane />} />
         <Route path="/shoes" element={<Path4ChooseShoes />} />
         <Route path="/food" element={<Path5ChooseFood />} />
+        <Route path="/eat" element={<FoodChoice />} />
+        <Route path="/beverages" element={<BeverageChoice />} />
+        <Route path="/desserts" element={<DessertsChoice />} />
         <Route path="/summary" element={<Summary />} />
       </Routes>
     </BrowserRouter>
